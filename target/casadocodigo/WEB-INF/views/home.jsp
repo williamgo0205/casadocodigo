@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Livros de Java, Android, iPhone, Ruby e muito mais!!!</title>
+<title>Treinamento Java - Livros de Java, Android, iPhone, Ruby e muito mais!!!</title>
 </head>
 <body>
 <h1>Casa do Código</h1>
