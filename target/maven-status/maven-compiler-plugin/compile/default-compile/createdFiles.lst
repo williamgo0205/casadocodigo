@@ -1,3 +1,4 @@
+br\com\casadocodigo\loja\validation\ProdutoValidation.class
 br\com\casadocodigo\loja\conf\ServletSpringMVC.class
 br\com\casadocodigo\loja\controllers\ProdutosController.class
 br\com\casadocodigo\loja\models\Preco.class
