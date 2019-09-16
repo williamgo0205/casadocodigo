@@ -11,6 +11,7 @@ import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -27,12 +28,12 @@ public class ProdutosController {
 	private ProdutoDAO produtoDao;
 
 	@InitBinder
-	public void initBinder(WebDataBinder binder) {
+	public void initblinder(WebDataBinder binder) {
 		binder.addValidators(new ProdutoValidation());
 	}
 
 	@RequestMapping("/form")
-	public ModelAndView form() {
+	public ModelAndView form(Produto produto) {
 		ModelAndView modelAndView = new ModelAndView("produtos/form");
 		modelAndView.addObject("tipos", TipoPreco.values());
 
@@ -40,17 +41,17 @@ public class ProdutosController {
 	}
 
 	@RequestMapping(method = RequestMethod.POST)
-	private ModelAndView grava(@Valid Produto produto, BindingResult result, RedirectAttributes redirectAttributes) {
-
+	private ModelAndView grava(MultipartFile sumario, @Valid Produto produto,BindingResult result, RedirectAttributes redirectAttributes) {
+		// System.out.println(produto);
+		System.out.println(sumario.getOriginalFilename());
+		
 		if (result.hasErrors()) {
-			return form();
+			return form(produto);
 		}
-
 		produtoDao.gravar(produto);
-
-		redirectAttributes.addFlashAttribute("sucesso", "Produto cadastrado com sucesso!");
-
+		redirectAttributes.addFlashAttribute("sucesso", "Produto Cadastrado com sucesso!!");
 		return new ModelAndView("redirect:produtos");
+
 	}
 
 	@RequestMapping(method = RequestMethod.GET)

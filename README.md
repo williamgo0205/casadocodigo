@@ -1,3 +1,3 @@
-# casadocodigo
+# curso-spring-mvc
 
-Projeto Treinamento Java MVC casadocodigo
+Aprendendo sobre Spring-MVC
