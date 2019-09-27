@@ -31,6 +31,7 @@ public class ServletSpringMVC extends AbstractAnnotationConfigDispatcherServletI
 		encodingfilte.setEncoding("UTF-8");
 		return  new Filter[] {encodingfilte};
 	}
+	
 	@Override
 	protected void customizeRegistration(Dynamic registration) {
 		registration.setMultipartConfig(new MultipartConfigElement(""));
